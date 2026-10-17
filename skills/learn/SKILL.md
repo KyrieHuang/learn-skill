@@ -10,7 +10,9 @@ description: >-
   "this week's quiz" list and runs a weekly quiz on a fixed day. Use it when the user says
   /learn, "what should I learn today", "pick something for me to study", "teach me X",
   "walk me through this article", "quiz me", "今天學什麼", "陪我讀這篇", "教我 X", "出題考我",
-  or when another workflow ends with "hand the daily three to /learn".
+  or when another workflow ends with "hand the daily three to /learn". Also use it when the user
+  hands over one article or link and asks whether it is worth the time ("is this worth reading",
+  "值不值得看", "幫我判斷這篇"): it judges the piece on the same three axes and lets them pick.
 ---
 
 # /learn
@@ -51,6 +53,27 @@ separate session.
 
 Reply in the configured `language` for everything the user sees, including option labels.
 
+**One piece instead of a pile?** If the user handed over a single article, link or file
+("is this worth my time?"), skip §1–§3 and follow `references/triage.md`, then continue at §4.
+
+## 1a. Ask for today's time budget — first
+
+Before gathering anything, ask how long the user wants to sit here today, in one choice box:
+"~15 min / ~30 min (Recommended when unsure) / ~60 min / open-ended". Use the config's
+`session.default_minutes` as the recommended option if set. Skip the question only when the user
+already said it ("I have 20 minutes").
+
+The budget shapes everything after it:
+
+- Candidates still come five per category — the user chooses, not the budget — but each box's
+  question field states the budget and a running total ("Budget 30 min · picked so far 0").
+- After the picks, if the total exceeds the budget by more than ~10%, **do not silently drop
+  anything**. Propose a trim in a choice box: the recommended subset that fits (and why: e.g.
+  "the concept first, it makes the article faster"), "do all of it, I have the time after all",
+  and "let me re-pick". Items left out go to the backlog, not away.
+- During the session, mention the remaining time at each "next item?" box; when the budget is
+  used up, offer "stop here (Recommended) / one more item (~N min)".
+
 ## 1. Gather material
 
 Read only what the config points at:
@@ -64,6 +87,10 @@ Read only what the config points at:
 
 Do not fetch URLs yet; titles, summaries and the notes' own text are enough to pick candidates.
 If the material is thin (fewer than 5 good candidates in a category), list fewer. **Never pad.**
+
+**Backlog.** Good candidates the user did not pick are kept in `backlog.file` and compete with
+today's material next time, so a rich day is not wasted and a thin day is filled from earlier
+ones. Rules (adding, re-offering, expiring after a few offers or days): `references/backlog.md`.
 
 If another workflow invoked /learn with today's material already in context (for example a
 daily digest that just finished), use that and skip re-reading.
@@ -99,7 +126,9 @@ an order (usually concept → article → question, because the concept makes th
 easier) and mark the recommendation.
 
 Write every picked concept into the quiz list now (§6), so it is recorded even if the session
-ends early.
+ends early. Update the backlog: unpicked → added or `Offered` +1; picked → `picked`.
+
+Then compare the picked total with the budget (§1a) and trim with the user if needed.
 
 ## 4. Work through items — one at a time
 

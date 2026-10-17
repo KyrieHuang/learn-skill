@@ -16,6 +16,10 @@ quiz:
   day: Friday
   records_folder: quizzes/
   questions: 5
+session:
+  default_minutes: 20
+backlog:
+  file: learn-backlog.md
 learner:
   takeaway_style: "one question about my bakery, answerable in a sentence or two"
 ---

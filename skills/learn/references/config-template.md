@@ -29,6 +29,12 @@ quiz:
 reading:
   wpm: 250                        # words per minute; CJK uses chars_per_min
   chars_per_min: 400
+session:
+  default_minutes: 30             # recommended option when asking today's time budget
+backlog:
+  file: learn-backlog.md          # unpicked candidates kept for later
+  max_offers: 3                   # expire after being shown this many times without a pick
+  max_age_days: 14                # expire news-driven rows older than this
 learner:
   takeaway_style: "one question tied to my own work, answerable in a sentence or two"
 ---
@@ -59,6 +65,9 @@ my vault's template at templates/concept.md".
   0–4 rubric.
 - **quiz.list_file** — created on first use with a `| Date | Concept | Why |` table. If the
   file already exists with other columns, /learn follows the existing columns.
+- **session.default_minutes** — /learn always asks for today's budget first; this is the
+  pre-selected answer.
+- **backlog.*** — see `backlog.md`. Delete the file any time to start fresh.
 - **learner.takeaway_style** — the shape of the take-home question at the end of a guided
   reading.
 - **About me / How to teach me** — the single most useful part. The more concrete

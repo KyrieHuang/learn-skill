@@ -9,6 +9,7 @@ preferences; a skill that ignores them silently loses content.
   free-text option on its own; never add one yourself.
 - Five candidates do not fit one question. Split them **3 + 2** into two questions of the same
   category ("① Questions to think about (1/2)", "(2/2)"), both `multiSelect: true`.
+- The time-budget question is its own small box before any candidates.
 - More than 16 options in total → a second call. For /learn: call 1 = ①a ①b ②a ②b,
   call 2 = ③a ③b plus any confirmation (low-confidence judgments, "push changes?").
 - Each option: a short `label` (the item itself, a few words) and a `description` holding the

@@ -7,11 +7,15 @@
 You save articles, notes and links faster than you learn from them. `/learn` turns that pile
 into a short, focused session:
 
-1. It reads **your** notes and reading list (only the folders you point it at).
+1. It asks how much time you have today, then reads **your** notes and reading list (only the
+   folders you point it at).
 2. It offers three kinds of candidates — **a question worth thinking about**, **a foundational
    concept to fill in**, **an article worth reading** — five honest picks each, every one with a
    reason and a time estimate.
-3. You pick by clicking (multi-select). It never decides for you.
+3. You pick by clicking (multi-select). It never decides for you — but if you pick more than
+   your time budget, it proposes what to trim and asks.
+   Good picks you skip are kept in a backlog and come back on a thinner day; after three skips
+   they retire.
 4. It works through your picks one at a time:
    - **Question → discussion.** Asks your view first, probes, brings the opposing case,
      converges on 2–3 conclusions.
@@ -23,6 +27,10 @@ into a short, focused session:
    spaced review dates.
 6. If an article suggests a better way to run your own projects, it proposes the change with
    acceptance criteria — and does it in a separate session only after you approve.
+
+Hand it a single article instead (`/learn <link>`, "is this worth my time?") and it judges that
+one piece on the same three axes — worth thinking about, a concept to fill in first, worth
+reading in full — each with a reason and minutes, and you tick the ones you want.
 
 Works with any folder of Markdown notes; especially at home in an Obsidian vault.
 
@@ -77,15 +85,17 @@ MIT.
 
 存下來的文章、筆記、連結，永遠比讀懂的多。`/learn` 把這堆東西變成一段短而專注的學習：
 
-1. 只讀**你**指定的筆記資料夾和閱讀清單。
+1. 先問你今天有多少時間，再讀**你**指定的筆記資料夾和閱讀清單。
 2. 給三類候選：**值得想的一題**、**該補的底層概念**、**值得讀完的一篇**，每類 5 個真心推薦，各附推薦理由和預估時間。
-3. 你用點的複選，它不替你決定。
+3. 你用點的複選，它不替你決定；勾得超過時間預算時，它會提出怎麼取捨、跟你確認。沒選的好候選會留在候選池，素材少的日子再拿出來；推過三次都沒選就退場。
 4. 一次陪你做一項：
    - **題目 → 討論**：先問你的看法，再追問、補反方，最後收斂成 2–3 個結論。
    - **概念 → 教一輪**：分 2–3 段，每段後一個確認題，答錯換個講法，結束依 0–4 熟悉度標準記錄。
    - **文章 → 導讀**：先講這篇要回答什麼、結構怎麼走、整篇多久，逐段標時間帶讀，最後留一個帶走的問題。
 5. 學過的概念進「本週待測」，每週固定一天出 5 題，依結果排下次複習。
 6. 讀到可以改進你自己系統的做法時，提出改進辦法和驗收標準，你批准後才另開對話動手。
+
+也可以只丟一篇文章（`/learn <連結>`、「這篇值不值得看」），它會從「值得想／該先補的概念／值得讀全文」三個面向各給判斷、理由和時間，你勾要做哪幾件。
 
 任何 Markdown 筆記資料夾都能用，Obsidian vault 最合適。
 
