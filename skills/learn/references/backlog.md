@@ -29,6 +29,9 @@ Follow the existing columns if the file already has a different header.
   offered again first next time, labelled "picked last time, not done yet". It does not count
   toward `max_offers`: the user already said yes once.
 - The user choosing "never show this again" → `dropped`.
+- The user said "not now" (SKILL.md §1a) → save every candidate built today with `Offered 0`.
+  When /learn resumes, rows with `Offered 0` are today's prepared batch: show them first and
+  only then count the offer.
 
 ## When building candidates
 

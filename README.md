@@ -7,7 +7,8 @@
 You save articles, notes and links faster than you learn from them. `/learn` turns that pile
 into a short, focused session:
 
-1. It asks how much time you have today, then reads **your** notes and reading list (only the
+1. It asks how much time you have today — "later today" (with an optional reminder) and "not
+   today" are one click away — then reads **your** notes and reading list (only the
    folders you point it at).
 2. It offers three kinds of candidates — **a question worth thinking about**, **a foundational
    concept to fill in**, **an article worth reading** — five honest picks each, every one with a
@@ -85,7 +86,7 @@ MIT.
 
 存下來的文章、筆記、連結，永遠比讀懂的多。`/learn` 把這堆東西變成一段短而專注的學習：
 
-1. 先問你今天有多少時間，再讀**你**指定的筆記資料夾和閱讀清單。
+1. 先問你今天有多少時間（也可以一鍵選「晚點有空」，可排提醒；或「今天沒空」），再讀**你**指定的筆記資料夾和閱讀清單。
 2. 給三類候選：**值得想的一題**、**該補的底層概念**、**值得讀完的一篇**，每類 5 個真心推薦，各附推薦理由和預估時間。
 3. 你用點的複選，它不替你決定；勾得超過時間預算時，它會提出怎麼取捨、跟你確認。沒選的好候選會留在候選池，素材少的日子再拿出來；推過三次都沒選就退場。
 4. 一次陪你做一項：

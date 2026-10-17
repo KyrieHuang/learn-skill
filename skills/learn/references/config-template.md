@@ -31,6 +31,7 @@ reading:
   chars_per_min: 400
 session:
   default_minutes: 30             # recommended option when asking today's time budget
+  later_slots: ["12:30", "18:30", "21:30"]   # offered under "Later today"; a reminder is scheduled for the pick
 backlog:
   file: learn-backlog.md          # unpicked candidates kept for later
   max_offers: 3                   # expire after being shown this many times without a pick

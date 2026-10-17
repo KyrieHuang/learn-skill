@@ -1,13 +1,13 @@
 {
   "name": "learn-skill",
   "owner": { "name": "Kyrie Huang" },
-  "metadata": { "description": "The /learn study companion skill for Claude Code", "version": "0.2.1" },
+  "metadata": { "description": "The /learn study companion skill for Claude Code", "version": "0.3.0" },
   "plugins": [
     {
       "name": "learn",
       "source": "./",
       "description": "Pick today's three things to learn from your own notes, then discuss, teach or guide-read them one at a time.",
-      "version": "0.2.1",
+      "version": "0.3.0",
       "author": { "name": "Kyrie Huang" },
       "keywords": ["learning", "study", "tutor", "obsidian"],
       "category": "productivity"

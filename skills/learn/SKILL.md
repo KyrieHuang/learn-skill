@@ -58,10 +58,26 @@ Reply in the configured `language` for everything the user sees, including optio
 
 ## 1a. Ask for today's time budget — first
 
-Before gathering anything, ask how long the user wants to sit here today, in one choice box:
-"~15 min / ~30 min (Recommended when unsure) / ~60 min / open-ended". Use the config's
-`session.default_minutes` as the recommended option if set. Skip the question only when the user
-already said it ("I have 20 minutes").
+Before gathering anything, ask how long the user wants to sit here today, in one choice box
+(question 1): "~15 min / ~30 min (Recommended when unsure) / ~60 min / open-ended". Use the
+config's `session.default_minutes` as the recommended option if set. In the same call add a
+second question, "Not now?", with "Later today" / "Not today" — so declining is one click.
+Skip the whole box only when the user already said it ("I have 20 minutes").
+
+**Not now.** Being asked right after another workflow often lands at a bad moment.
+
+- **Later today** → one more box: roughly when — the slots in `session.later_slots` (e.g.
+  noon / evening / night) plus "I'll call you". Build today's candidates now (§1–§2) and save them
+  to the backlog with `Offered 0`, so the later session does not re-read anything. For a slot,
+  schedule a one-time reminder if the client can (in Claude Code, the scheduled-tasks tool,
+  `fireAt` = the slot time; the prompt must be self-contained: "run /learn in <project> using
+  the candidates prepared on <date> in <backlog file>; start at the time-budget box"). Say in one
+  line that it only fires while the app is open. For "I'll call you", schedule nothing; the next
+  /learn today starts from those prepared rows.
+- **Not today** → build and save candidates the same way (`Offered 0`), then stop. No follow-up,
+  no reminder. Tomorrow they compete with the new material.
+- The box closed or ignored counts as **Not today**. Never ask twice in one day.
+- Rows saved by either path were never seen, so they do not count toward `max_offers`.
 
 The budget shapes everything after it:
 
