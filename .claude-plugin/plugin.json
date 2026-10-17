@@ -1,7 +1,7 @@
 {
   "name": "learn",
   "description": "A daily study companion for Claude Code: picks candidates from your own notes and reading list (a question worth thinking about, a foundational concept to fill in, an article worth reading), lets you choose by clicking, then discusses, teaches or guides you through one item at a time and keeps a weekly quiz list.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": { "name": "Kyrie Huang" },
   "license": "MIT",
   "keywords": ["learning", "study", "spaced-repetition", "obsidian", "knowledge-graph", "guided-reading", "tutor"],

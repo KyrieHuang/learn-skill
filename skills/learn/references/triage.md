@@ -43,4 +43,8 @@ three are "skip", say so plainly and offer only "save summary / discard".
 
 - If a time budget is set for today (SKILL.md §1a), check the total and propose a trim.
 - Run the picked modes in the recommended order (concept → read → discuss).
-- Unpicked but "worth it" axes go into the backlog (`backlog.md`).
+- Picked concepts go on the quiz list right away (SKILL.md §6), as in the daily flow.
+- Unpicked but "worth it" axes go into the backlog (`backlog.md`); picked ones go in as
+  `picked` until done.
+- If the piece already sits in the backlog (offered earlier as ③), update that row: `picked`
+  if the user chose to read it, `dropped` if the verdict was "skip".

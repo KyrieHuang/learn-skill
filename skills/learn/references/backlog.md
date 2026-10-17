@@ -25,12 +25,15 @@ Follow the existing columns if the file already has a different header.
 - Every candidate shown and **not picked** → add a row (`Offered 1`) or, if it is already in the
   backlog, increase `Offered` and set `Last offered` to today.
 - Picked → `picked`; set `done` when the item is finished.
+- Picked but not done (trimmed by the time budget, or the session ended) → stays `picked` and is
+  offered again first next time, labelled "picked last time, not done yet". It does not count
+  toward `max_offers`: the user already said yes once.
 - The user choosing "never show this again" → `dropped`.
 
 ## When building candidates
 
 1. Build today's candidates as usual (SKILL.md §2).
-2. Pull `open` backlog rows of the same category and rank them **together with today's**, by the
+2. Pull `picked` (not done) and `open` backlog rows of the same category and rank them **together with today's**, by the
    same signals. Old rows are not second-class: a strong pick from three days ago beats a weak
    one from today.
 3. Mark backlog picks in the option description: "From 10-15 · offered once before".
